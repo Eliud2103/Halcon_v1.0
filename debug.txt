@@ -1,0 +1,14 @@
+Array
+(
+    [codigo_apartado] => 1, 2
+    [num_asiento] => 1, 2
+    [estado_reserva] => ocupado
+    [id_usuario] => 25
+    [id_horario] => 39
+    [id_trayecto] => 9
+    [origen] => Ooctlan
+    [destino] => Ricon
+    [fecha] => 
+    [hora_salida] => 22:52:00
+    [monto_pagar] => 100
+)
