@@ -15,7 +15,7 @@
             text-align: center;
             margin-top: 20px;
         }
-        
+
         .bg-form {
             background-color: #d6e1f7;
             border-radius: 20px;
@@ -26,7 +26,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             position: relative;
-            min-height: 300px; 
+            min-height: 300px;
         }
 
         label {
@@ -36,18 +36,20 @@
             display: block;
         }
 
-        input.form-control {
+        label.form-control {
             border-radius: 10px;
-            background-color: #6DA0ED;
-            color: #fff;
+            background-color: #BBD5FD;
+            color: #000000;
             padding: 14px;
             width: 100%;
             margin-bottom: 20px;
             border: none;
             opacity: 0.9;
+            white-space: normal; /* Permite que el texto haga salto de línea */
+            word-wrap: break-word; /* Fuerza el salto de línea si es necesario */
         }
 
-        input.form-control:disabled {
+        label.form-control:disabled {
             background-color: #BBD5FD;
             color: black;
             opacity: 1;
@@ -55,78 +57,95 @@
 
         .imagen {
             width: 100%;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             padding-right: 20px;
+            flex-direction: column;
         }
 
         .logo {
-            width: 50%;
-            position: absolute;
-            bottom: 255px;
-            right: 50px;
-            z-index: 1; 
-            max-width: 250px;
+            width: 40%;
+            max-width: 200px;
+            position: relative;
+            margin: 0 auto;
+            z-index: 1;
         }
 
         .autobus {
-            position: absolute;
-            bottom: 80px;
-            right: 30px;
-            max-width: 300px;
-            z-index: 2; 
+            max-width: 250px;
+            position: relative;
+            margin-top: 10px;
+            z-index: 2;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 992px) {
+            .bg-form {
+                flex-direction: row;
+                padding: 20px 40px;
+            }
+
+            .col-md-8 {
+                order: 1;
+            }
+
+            .col-md-4 {
+                order: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .logo {
+                position: absolute;
+                bottom: 155px;
+                right: 40px;
+                max-width: 250px;
+            }
+
+            .autobus {
+                position: absolute;
+                bottom: 20px;
+                right: 30px;
+            }
+            .img-fluid{
+                width: 300px;;
+            }
+            
+            
         }
 
         @media (max-width: 768px) {
             .bg-form {
+                flex-direction: column;
                 padding: 20px;
                 margin: 20px 10px;
-                border-radius: 20px;
-                position: relative;
-                min-height: 400px;
             }
 
-            input.form-control {
-                width: 100%;
+            .form-group label.form-control {
+                padding: 10px; /* Reduce el padding en móviles para más espacio */
+                height: auto;
                 border-radius: 20px;
                 margin: 10px auto;
-                background-color: #FFFFFF;
-                padding: 16px;
             }
 
             .imagen {
-                width: 100%;
-                height: auto;
-                margin-top: 20px;
-                position: relative;
-                justify-content: center;
                 flex-direction: column;
+                margin-top: 20px;
                 align-items: center;
-                transform: translate(0, 0);
             }
 
-            .logo {
+            .logo, .autobus {
                 position: relative;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
                 max-width: 150px;
-                z-index: 1;
-            }
-
-            .autobus {
-                position: relative;
+                margin: 0 auto;
                 bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                max-width: 250px;
-                z-index: 2;
             }
+            
+            
+            
         }
     </style>
 </head>
@@ -139,15 +158,15 @@
                 <form>
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" value="Autobuses Halcón División México" disabled>
+                        <label class="form-control">Autobuses Halcón División México</label>
                     </div>
                     <div class="form-group">
                         <label for="email">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" value="autobuseshalcon.dmo@gmail.com" disabled>
+                        <label class="form-control">autobuseshalcon.dmo@gmail.com</label>
                     </div>
                     <div class="form-group">
                         <label for="address">Dirección</label>
-                        <input type="text" class="form-control" id="address" name="address" value="C. Valdivieso S/N B. San Antonio, San Pablo Huixtepec" disabled>
+                        <label class="form-control">C. Valdivieso S/N B. San Antonio, San Pablo Huixtepec</label>
                     </div>
                 </form>
             </div>
@@ -159,4 +178,4 @@
     </div>
 </body>
 <?php include 'components/footer.php'; ?>
-</html>
+</html> 
